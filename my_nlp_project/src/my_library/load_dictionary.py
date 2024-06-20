@@ -1,23 +1,24 @@
-import os
-import sys
-project_root_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-print(project_root_path)
+import csv
+
+def load_dictionary1(file_path):
+    polarity_dict = {}
+    with open(file_path, 'r', encoding='utf-8') as f:
+        reader = csv.reader(f, delimiter='\t')
+        for row in reader:
+            if len(row) >= 2:
+                word = row[0].strip()
+                polarity = row[1].strip()
+                polarity_dict[word] = polarity
+    return polarity_dict
 
 
-def load(a):
-    split = os.path.split(a)
-    print(split[1])
-    if a == os.path.abspath(split[1]):
-        print("Bingo")
-    else:
-        print(a)
-        print(os.path.abspath(split[1]))
-        print("poop")
-
-    with open(a)e as file:
-        print(file.read(), "GOOOOOOD")
-    #dictionary1_path = "../ext-lib/dictionary1.txt"
-    #dictionary2_path = "../ext-lib/dictionary2.txt"
-    #if dictionary1_path == a or dictionary2_path == a:
-        #print("Bingo")
-    return "Good"
+def load_dictionary2(file_path):
+    polarity_dict = {}
+    with open(file_path, 'r', encoding='utf-8') as f:
+        reader = csv.reader(f, delimiter='\t')
+        for row in reader:
+            if len(row) >= 2:
+                polarity = row[0].strip()
+                word = row[1].strip()
+                polarity_dict[word] = polarity
+    return polarity_dict
