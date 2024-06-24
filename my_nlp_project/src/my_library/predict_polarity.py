@@ -1,7 +1,7 @@
 def predict(count_statistics):
-    Mood_result = count_statistics[0]
-    cue = count_statistics[1:len(count_statistics)-1]
-    sentence = count_statistics[len(count_statistics)-1]
+    Mood_result = count_statistics
+    #cue = count_statistics[1:len(count_statistics)-1]
+    #sentence = count_statistics[len(count_statistics)-1]
 
     if Mood_result[0] > Mood_result[1]:
         return "Positive"
@@ -40,10 +40,5 @@ def predict_2(count_statistics):
                     e += 1
 
         result.append([p, n, e])
-
-    return result
-
-
-
-
-
+    print("finished")
+    return sentence, predict(result[-1])
